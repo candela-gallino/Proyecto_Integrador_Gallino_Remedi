@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Integrador: Referencia del archivo firmware/examples/Proyecto_Integrador/main/Proyecto_Integrador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_proyecto___integrador_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Proyecto_Integrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;hx711.h&quot;</code><br />
+<code>#include &quot;servo_sg90.h&quot;</code><br />
+<code>#include &quot;timer_mcu.h&quot;</code><br />
+<code>#include &quot;gpio_mcu.h&quot;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;led.h&quot;</code><br />
+<code>#include &quot;neopixel_stripe.h&quot;</code><br />
+<code>#include &quot;ble_mcu.h&quot;</code><br />
+<code>#include &quot;delay_mcu.h&quot;</code><br />
+<code>#include &quot;fft.h&quot;</code><br />
+<code>#include &quot;iir_filter.h&quot;</code><br />
+</div>
+<p><a href="_proyecto___integrador_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3df1b4cad09974bfc68858fad7cdc054" id="r_a3df1b4cad09974bfc68858fad7cdc054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a>&#160;&#160;&#160;500</td></tr>
+<tr class="separator:a3df1b4cad09974bfc68858fad7cdc054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3ccd8a43b5c5e8a4d573780da1fd4a" id="r_a7a3ccd8a43b5c5e8a4d573780da1fd4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a>&#160;&#160;&#160;LED_1</td></tr>
+<tr class="separator:a7a3ccd8a43b5c5e8a4d573780da1fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7" id="r_a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9401e43a8c86acafb31c8e2709baefa1" id="r_a9401e43a8c86acafb31c8e2709baefa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9401e43a8c86acafb31c8e2709baefa1">SAMPLE_FREQ</a>&#160;&#160;&#160;220</td></tr>
+<tr class="separator:a9401e43a8c86acafb31c8e2709baefa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712d7467d40709e6e6a873177ed5ee43" id="r_a712d7467d40709e6e6a873177ed5ee43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a712d7467d40709e6e6a873177ed5ee43">DIFERENCIA_PESO_OBJETIVO</a>&#160;&#160;&#160;40.0</td></tr>
+<tr class="memdesc:a712d7467d40709e6e6a873177ed5ee43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peso del alimento que se le debe dar al animal.  <br /></td></tr>
+<tr class="separator:a712d7467d40709e6e6a873177ed5ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a91612b8ce475e603e639013e16dfd907" id="r_a91612b8ce475e603e639013e16dfd907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91612b8ce475e603e639013e16dfd907">celda_de_carga</a> (void *param)</td></tr>
+<tr class="memdesc:a91612b8ce475e603e639013e16dfd907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de tarea para manejar la celda de carga, encargada de medir el peso.  <br /></td></tr>
+<tr class="separator:a91612b8ce475e603e639013e16dfd907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20384d01ce0ae1b89dac93720c22f2fe" id="r_a20384d01ce0ae1b89dac93720c22f2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20384d01ce0ae1b89dac93720c22f2fe">mover_servo</a> (void *param)</td></tr>
+<tr class="memdesc:a20384d01ce0ae1b89dac93720c22f2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de tarea para mover el servo, permitiendo abrir y cerrar compuertas.  <br /></td></tr>
+<tr class="separator:a20384d01ce0ae1b89dac93720c22f2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace7235439aba57d9c67e70e773cdd872" id="r_ace7235439aba57d9c67e70e773cdd872"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace7235439aba57d9c67e70e773cdd872">funcion_delay</a> ()</td></tr>
+<tr class="memdesc:ace7235439aba57d9c67e70e773cdd872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de retardo que notifica a las tareas.  <br /></td></tr>
+<tr class="separator:ace7235439aba57d9c67e70e773cdd872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="memdesc:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función principal de la aplicación.  <br /></td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3e3ed71ca6e8cf8dc8f1da6ed6566a0d" id="r_a3e3ed71ca6e8cf8dc8f1da6ed6566a0d"><td class="memItemLeft" align="right" valign="top">gpio_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e3ed71ca6e8cf8dc8f1da6ed6566a0d">pd_sck</a> = 1</td></tr>
+<tr class="separator:a3e3ed71ca6e8cf8dc8f1da6ed6566a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa38a243d8809b45b8c9b19ea0cbd79" id="r_a2aa38a243d8809b45b8c9b19ea0cbd79"><td class="memItemLeft" align="right" valign="top">gpio_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aa38a243d8809b45b8c9b19ea0cbd79">dout</a> = 2</td></tr>
+<tr class="separator:a2aa38a243d8809b45b8c9b19ea0cbd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d28dec57cce925ad92342891bd71e7c" id="r_a1d28dec57cce925ad92342891bd71e7c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d28dec57cce925ad92342891bd71e7c">scale</a> = 2.4</td></tr>
+<tr class="separator:a1d28dec57cce925ad92342891bd71e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129303e4bd38a8cdba722b6238ed56e9" id="r_a129303e4bd38a8cdba722b6238ed56e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a129303e4bd38a8cdba722b6238ed56e9">offset</a> = 0.0</td></tr>
+<tr class="separator:a129303e4bd38a8cdba722b6238ed56e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94bec5eca33f61f9e49eb467e7ee0b8" id="r_ad94bec5eca33f61f9e49eb467e7ee0b8"><td class="memItemLeft" align="right" valign="top">volatile float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad94bec5eca33f61f9e49eb467e7ee0b8">peso_actual</a> = 0.0</td></tr>
+<tr class="separator:ad94bec5eca33f61f9e49eb467e7ee0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1603803ccc2961c3e8ac00da2ce20056" id="r_a1603803ccc2961c3e8ac00da2ce20056"><td class="memItemLeft" align="right" valign="top">volatile float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1603803ccc2961c3e8ac00da2ce20056">peso_inicial</a> = 0.0</td></tr>
+<tr class="separator:a1603803ccc2961c3e8ac00da2ce20056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece50e5cc8c5dfa708975151176452aa" id="r_aece50e5cc8c5dfa708975151176452aa"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aece50e5cc8c5dfa708975151176452aa">CELDA_DE_CARGA_TASKHANDLE</a> = NULL</td></tr>
+<tr class="separator:aece50e5cc8c5dfa708975151176452aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1561a3e31b8ce9ac6c7a52c32673b9e" id="r_ab1561a3e31b8ce9ac6c7a52c32673b9e"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1561a3e31b8ce9ac6c7a52c32673b9e">SERVO_TASKHANDLE</a> = NULL</td></tr>
+<tr class="separator:ab1561a3e31b8ce9ac6c7a52c32673b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a6b20d41d6252e9871430c242cb1a56e7" name="a6b20d41d6252e9871430c242cb1a56e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&#160;</a></span>BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00051">51</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="a3df1b4cad09974bfc68858fad7cdc054" name="a3df1b4cad09974bfc68858fad7cdc054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b4cad09974bfc68858fad7cdc054">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00049">49</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="a712d7467d40709e6e6a873177ed5ee43" name="a712d7467d40709e6e6a873177ed5ee43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712d7467d40709e6e6a873177ed5ee43">&#9670;&#160;</a></span>DIFERENCIA_PESO_OBJETIVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIFERENCIA_PESO_OBJETIVO&#160;&#160;&#160;40.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peso del alimento que se le debe dar al animal. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00057">57</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00094">mover_servo()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3ccd8a43b5c5e8a4d573780da1fd4a" name="a7a3ccd8a43b5c5e8a4d573780da1fd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3ccd8a43b5c5e8a4d573780da1fd4a">&#9670;&#160;</a></span>LED_BT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BT&#160;&#160;&#160;LED_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00050">50</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="a9401e43a8c86acafb31c8e2709baefa1" name="a9401e43a8c86acafb31c8e2709baefa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9401e43a8c86acafb31c8e2709baefa1">&#9670;&#160;</a></span>SAMPLE_FREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAMPLE_FREQ&#160;&#160;&#160;220</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00052">52</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función principal de la aplicación. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00123">123</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto___integrador_8c_source.html#l00076">celda_de_carga()</a>, <a class="el" href="_proyecto___integrador_8c_source.html#l00067">CELDA_DE_CARGA_TASKHANDLE</a>, <a class="el" href="_proyecto___integrador_8c_source.html#l00113">funcion_delay()</a>, <a class="el" href="_proyecto___integrador_8c_source.html#l00094">mover_servo()</a>, <a class="el" href="_proyecto___integrador_8c_source.html#l00063">scale</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00068">SERVO_TASKHANDLE</a>.</p>
+
+</div>
+</div>
+<a id="a91612b8ce475e603e639013e16dfd907" name="a91612b8ce475e603e639013e16dfd907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91612b8ce475e603e639013e16dfd907">&#9670;&#160;</a></span>celda_de_carga()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void celda_de_carga </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de tarea para manejar la celda de carga, encargada de medir el peso. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Parámetro de la tarea (no utilizado) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00076">76</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto___integrador_8c_source.html#l00065">peso_actual</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00066">peso_inicial</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ace7235439aba57d9c67e70e773cdd872" name="ace7235439aba57d9c67e70e773cdd872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace7235439aba57d9c67e70e773cdd872">&#9670;&#160;</a></span>funcion_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void funcion_delay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de retardo que notifica a las tareas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00113">113</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto___integrador_8c_source.html#l00067">CELDA_DE_CARGA_TASKHANDLE</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00068">SERVO_TASKHANDLE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a20384d01ce0ae1b89dac93720c22f2fe" name="a20384d01ce0ae1b89dac93720c22f2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20384d01ce0ae1b89dac93720c22f2fe">&#9670;&#160;</a></span>mover_servo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mover_servo </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de tarea para mover el servo, permitiendo abrir y cerrar compuertas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Parámetro de la tarea (no utilizado) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00094">94</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto___integrador_8c_source.html#l00057">DIFERENCIA_PESO_OBJETIVO</a>, <a class="el" href="_proyecto___integrador_8c_source.html#l00065">peso_actual</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00066">peso_inicial</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="aece50e5cc8c5dfa708975151176452aa" name="aece50e5cc8c5dfa708975151176452aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece50e5cc8c5dfa708975151176452aa">&#9670;&#160;</a></span>CELDA_DE_CARGA_TASKHANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t CELDA_DE_CARGA_TASKHANDLE = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00067">67</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00113">funcion_delay()</a>.</p>
+
+</div>
+</div>
+<a id="a2aa38a243d8809b45b8c9b19ea0cbd79" name="a2aa38a243d8809b45b8c9b19ea0cbd79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aa38a243d8809b45b8c9b19ea0cbd79">&#9670;&#160;</a></span>dout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gpio_t dout = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00062">62</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="a129303e4bd38a8cdba722b6238ed56e9" name="a129303e4bd38a8cdba722b6238ed56e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129303e4bd38a8cdba722b6238ed56e9">&#9670;&#160;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double offset = 0.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00064">64</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="a3e3ed71ca6e8cf8dc8f1da6ed6566a0d" name="a3e3ed71ca6e8cf8dc8f1da6ed6566a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3ed71ca6e8cf8dc8f1da6ed6566a0d">&#9670;&#160;</a></span>pd_sck</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gpio_t pd_sck = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00061">61</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+</div>
+</div>
+<a id="ad94bec5eca33f61f9e49eb467e7ee0b8" name="ad94bec5eca33f61f9e49eb467e7ee0b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94bec5eca33f61f9e49eb467e7ee0b8">&#9670;&#160;</a></span>peso_actual</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile float peso_actual = 0.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00065">65</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00076">celda_de_carga()</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00094">mover_servo()</a>.</p>
+
+</div>
+</div>
+<a id="a1603803ccc2961c3e8ac00da2ce20056" name="a1603803ccc2961c3e8ac00da2ce20056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1603803ccc2961c3e8ac00da2ce20056">&#9670;&#160;</a></span>peso_inicial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile float peso_inicial = 0.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00066">66</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00076">celda_de_carga()</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00094">mover_servo()</a>.</p>
+
+</div>
+</div>
+<a id="a1d28dec57cce925ad92342891bd71e7c" name="a1d28dec57cce925ad92342891bd71e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d28dec57cce925ad92342891bd71e7c">&#9670;&#160;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float scale = 2.4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00063">63</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ab1561a3e31b8ce9ac6c7a52c32673b9e" name="ab1561a3e31b8ce9ac6c7a52c32673b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1561a3e31b8ce9ac6c7a52c32673b9e">&#9670;&#160;</a></span>SERVO_TASKHANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t SERVO_TASKHANDLE = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto___integrador_8c_source.html#l00068">68</a> del archivo <a class="el" href="_proyecto___integrador_8c_source.html">Proyecto_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto___integrador_8c_source.html#l00123">app_main()</a> y <a class="el" href="_proyecto___integrador_8c_source.html#l00113">funcion_delay()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_27a4bb7fc2fc5e5520ea8ebf6e4ccea3.html">examples</a></li><li class="navelem"><a class="el" href="dir_15db8a4729e2470e0e2bc5935db52a29.html">Proyecto_Integrador</a></li><li class="navelem"><a class="el" href="dir_a9564a5b4ee2830b59308ac4579d70c7.html">main</a></li><li class="navelem"><a class="el" href="_proyecto___integrador_8c.html">Proyecto_Integrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>
